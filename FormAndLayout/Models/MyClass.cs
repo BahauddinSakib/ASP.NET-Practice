@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace FormAndLayout.Models
 {
@@ -22,13 +19,16 @@ namespace FormAndLayout.Models
         public DateTime? DOB { get; set; }
 
         [Required(ErrorMessage = "Provide Email")]
-        [RegularExpression(@"^\d{2}-\d{5}-\d{1}@student.aiub.edu+$", ErrorMessage = " Email should match with Id ")]
+        [EmailValidation]  // Correct custom validation reference
         public string Email { get; set; }
-
-
-
-
-
-
     }
 }
+
+
+
+
+
+
+
+
+    
