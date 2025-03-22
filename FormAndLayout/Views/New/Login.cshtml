@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h3 style="text-align:center">Login Here</h3>
+
+<div class="container-fluid d-flex justify-content-center align-items-center" >
+
+    <form method="post">
+        <label>Name:</label>
+        <input type="text" class="form-control" name="Name" value="@Model.Name" placeholder="Abcd" /><br />
+        <p class="text-danger">@Html.ValidationMessage("Name")</p>
+
+        <label>Id:</label>
+        <input type="text" class="form-control" name="Id" value="@Model.Id" placeholder="22-****-*" /><br />
+        <p class="text-danger">@Html.ValidationMessage("Id")</p>
+
+        <label>Date of Birth:</label>
+        <input type="date" class="form-control" name="DOB" value="@(Model.DOB?.ToString("yyyy-MM-dd") ?? "")" /><br />
+        <p class="text-danger">@Html.ValidationMessage("DOB")</p>
+
+        <label>Email:</label>
+        <input type="text" class="form-control" name="Email" value="@Model.Email" placeholder="22-*****-*Student.aiub.edu" />
+        <p class="text-danger">@Html.ValidationMessage("Email")</p>
+
+
+
+
+
+
+
+        <input type="submit" value="Add" class="btn btn-primary" />
+
+    </form>
+
+</div>
+
+
